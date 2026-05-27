@@ -43,7 +43,7 @@ export default function Modal({ isOpen, onClose }) {
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/30">
               <Smartphone className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-2xl font-extrabold text-slate-900">Download HYOID</h3>
+            <h3 className="text-2xl font-extrabold text-slate-900">Download Hyoid</h3>
             <p className="text-slate-500 text-sm mt-2">Scan the QR code or wait for the Play Store launch</p>
           </div>
 

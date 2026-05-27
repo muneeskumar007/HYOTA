@@ -52,7 +52,7 @@ export default function Navbar({ onDownloadClick }) {
             <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
           </div>
           <span className="text-xl font-extrabold tracking-tight text-slate-900">
-            HY<span className="text-gradient">OID</span>
+            Hy<span className="text-gradient">oid</span>
           </span>
         </a>
 

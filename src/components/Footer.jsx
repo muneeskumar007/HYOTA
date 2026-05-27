@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center shadow-md">
                 <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-extrabold tracking-tight text-white">HYOID</span>
+              <span className="text-xl font-extrabold tracking-tight text-white">Hyoid</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Smart healthcare management for patients and doctors. Simplifying appointments, records, and clinical workflows — all from your phone.

@@ -791,14 +791,14 @@ function SectionHeader() {
         How It Works
       </div>
       <h2 style={{ fontSize:"clamp(20px,4vw,38px)", fontWeight:900, lineHeight:1.1, letterSpacing:"-.025em", color:"#0f172a", marginBottom:10 }}>
-        From Registration to{" "}
+      Up and Running in{" "}
         <span style={{ background:"linear-gradient(135deg,#22c55e 0%,#14b8a6 50%,#3b82f6 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
-          Complete Care
+         6 Simple Steps
         </span>
       </h2>
-      <p style={{ color:"#64748b", fontSize:"clamp(13px,2vw,15px)", lineHeight:1.7, maxWidth:440, margin:"0 auto" }}>
-        Six seamless steps to a smarter, healthier you — all from your phone.
-      </p>
+      <p className="text-slate-500 text-base leading-relaxed">
+            we believe home is where healing  happens. Our streamlined process connects patients with top doctors, making healthcare more accessible and convenient than ever.
+          </p>
     </div>
   );
 }

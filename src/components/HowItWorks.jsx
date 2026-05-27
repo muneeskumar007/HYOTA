@@ -1,7 +1,7 @@
 import { UserPlus, CalendarCheck, Stethoscope, FolderOpen } from 'lucide-react';
 import { useReveal } from '../hooks/useReveal';
 import WorkflowSection from "./WorkflowSection";
-import WorkflowSection1 from "./WorkflowSection1";
+
 const steps = [
   {
     step: '01',
@@ -52,7 +52,7 @@ export default function HowItWorks() {
     <section id="how-it-works" ref={ref} className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="reveal text-center mb-16 max-w-2xl mx-auto">
+        {/* <div className="reveal text-center mb-16 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 text-xs font-semibold px-4 py-2 rounded-full mb-5 border border-teal-100">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
             Simple Process
@@ -64,8 +64,8 @@ export default function HowItWorks() {
           <p className="text-slate-500 text-base leading-relaxed">
             we believe home is where healing  happens. Our streamlined process connects patients with top doctors, making healthcare more accessible and convenient than ever.
           </p>
-        </div>
-        <WorkflowSection1 />
+        </div> */}
+    
         <WorkflowSection />
 
 
