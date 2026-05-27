@@ -516,7 +516,7 @@ const STEPS = [
   { id:"03", title:"Diagnosed at Home",   desc:"Video consultation or home visit — care on your terms.",            icon:Stethoscope,  ring:"#c4b5fd", glow:"rgba(139,92,246,0.22)",  dot:"#8b5cf6", tagBg:"#f5f3ff", tagC:"#6d28d9", iconBg:"linear-gradient(135deg,#8b5cf6,#a78bfa)" },
   { id:"04", title:"Medicine Delivered",  desc:"Prescriptions fulfilled and delivered to your door quickly.",       icon:Pill,         ring:"#fca5a5", glow:"rgba(239,68,68,0.20)",   dot:"#ef4444", tagBg:"#fef2f2", tagC:"#b91c1c", iconBg:"linear-gradient(135deg,#ef4444,#f87171)" },
   { id:"05", title:"Timely Follow-Up",    desc:"Smart reminders, health tracking, and check-in notifications.",     icon:HeartPulse,   ring:"#fdba74", glow:"rgba(249,115,22,0.20)",  dot:"#f97316", tagBg:"#fff7ed", tagC:"#c2410c", iconBg:"linear-gradient(135deg,#f97316,#fb923c)" },
-  { id:"06", title:"Manage Records",      desc:"Every prescription and report, organized and accessible 24/7.",     icon:FolderHeart,  ring:"#5eead4", glow:"rgba(20,184,166,0.22)",  dot:"#14b8a6", tagBg:"#f0fdfa", tagC:"#0f766e", iconBg:"linear-gradient(135deg,#14b8a6,#2dd4bf)" },
+  { title:"Manage Records",          icon:FolderHeart,  ring:"#5eead4", glow:"rgba(20,184,166,0.22)",  dot:"#14b8a6", tagBg:"#f0fdfa", tagC:"#0f766e", iconBg:"linear-gradient(135deg,#14b8a6,#2dd4bf)" },
 ];
 
 const KEYFRAMES = `
@@ -793,7 +793,7 @@ function SectionHeader() {
       <h2 style={{ fontSize:"clamp(20px,4vw,38px)", fontWeight:900, lineHeight:1.1, letterSpacing:"-.025em", color:"#0f172a", marginBottom:10 }}>
       Up and Running in{" "}
         <span style={{ background:"linear-gradient(135deg,#22c55e 0%,#14b8a6 50%,#3b82f6 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
-         6 Simple Steps
+         5 Simple Steps
         </span>
       </h2>
       <p className="text-slate-500 text-base leading-relaxed">
