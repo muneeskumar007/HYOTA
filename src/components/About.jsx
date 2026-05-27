@@ -29,10 +29,15 @@ export default function About() {
 
             <div className="space-y-3">
               {[
-                'Long wait times and lost appointments',
-                'Inaccessible medical records for patients',
-                'Disconnected communication between doctors',
-                'No centralized workflow for hospital staff',
+                'Long un-timed wasn\'t at hospital',
+                'Travel in hectic traffic',
+                'Slight discomfort should not cost you a day',
+                'Was queued at pharmacy',
+                'Was queued at diagnosis lab',
+
+
+                'Visit hospitals for follow up',
+                  'Visit hospital regular chronic management',
               ].map((p) => (
                 <div key={p} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -57,17 +62,20 @@ export default function About() {
               <div className="absolute -bottom-12 -left-8 w-48 h-48 rounded-full bg-white/5" />
 
               <div className="relative z-10">
-                <h3 className="text-2xl font-extrabold mb-3">HYOTA Unifies It All</h3>
+                <h3 className="text-2xl font-extrabold mb-3">HYOID Unifies It All</h3>
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">
                   A single, elegantly designed mobile platform that brings patients, doctors, and hospital workflows into perfect harmony.
                 </p>
 
                 <div className="space-y-3">
                   {[
-                    'Instant appointment booking & confirmation',
-                    'Centralized, secure medical records',
-                    'Digital prescriptions delivered in real time',
-                    'Doctor dashboards built for efficiency',
+                    '30 minutes waiting time',
+                    'Take rest at home',
+                    'We need 15 min diagnose',
+                    'Delivered at home',
+                    'Taken at home',
+                    'Done at home',
+                    'Done at home',
                   ].map((s) => (
                     <div key={s} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">

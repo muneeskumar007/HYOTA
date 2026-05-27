@@ -3,7 +3,7 @@ import { Menu, X, Activity } from 'lucide-react';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#features', label: 'Features' },
+  // { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How It Works' },
   { href: '#team', label: 'Team' },
   { href: '#download', label: 'Download' },
@@ -52,7 +52,7 @@ export default function Navbar({ onDownloadClick }) {
             <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
           </div>
           <span className="text-xl font-extrabold tracking-tight text-slate-900">
-            HY<span className="text-gradient">OTA</span>
+            HY<span className="text-gradient">OID</span>
           </span>
         </a>
 

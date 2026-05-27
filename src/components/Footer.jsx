@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center shadow-md">
                 <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-extrabold tracking-tight text-white">HYOTA</span>
+              <span className="text-xl font-extrabold tracking-tight text-white">HYOID</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Smart healthcare management for patients and doctors. Simplifying appointments, records, and clinical workflows — all from your phone.
@@ -67,8 +67,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-4 py-6 border-t border-slate-800 mb-6">
           <div className="flex items-center gap-2 text-sm">
             <Mail className="w-4 h-4 text-blue-500" />
-            <a href="mailto:hello@hyota.app" className="text-slate-400 hover:text-white transition-colors">
-              hello@hyota.app
+            <a href="mailto:hello@hyoid.app" className="text-slate-400 hover:text-white transition-colors">
+              hello@hyoid.app
             </a>
           </div>
           <div className="hidden md:block w-px h-4 bg-slate-700" />
@@ -78,7 +78,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-800">
           <p className="text-xs text-slate-600">
-            © {new Date().getFullYear()} HYOTA. All rights reserved.
+            © {new Date().getFullYear()} HYOID. All rights reserved.
           </p>
           <div className="flex items-center gap-1">
             <span className="text-xs text-slate-600">Made with</span>

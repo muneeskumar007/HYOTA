@@ -30,7 +30,7 @@ export default function DownloadSection({ onDownloadClick }) {
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
               Get Started with
               <br />
-              HYOTA Today
+              HYOID Today
             </h2>
             <p className="text-blue-100 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
               Join the waitlist and be among the first to experience seamless, modern healthcare management.
@@ -42,7 +42,7 @@ export default function DownloadSection({ onDownloadClick }) {
                 className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-bold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-200 flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 <Download className="w-4 h-4" />
-                Download HYOTA
+                Download HYOID
               </button>
               <a
                 href="#features"

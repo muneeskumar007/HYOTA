@@ -53,7 +53,7 @@ export default function Team() {
             <span className="text-gradient">Care Deeply</span>
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
-            A small, focused team driven by the belief that better healthcare technology means better patient outcomes.
+            A small focused team that belief health heals in comfort
           </p>
         </div>
 

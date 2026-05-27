@@ -55,7 +55,7 @@ export default function Hero({ onDownloadClick }) {
               <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight text-slate-900">
                 Smart Healthcare
                 <br />
-                <span className="text-gradient">Management</span>
+                <span className="text-gradient">Ecosystem</span>
                 <br />
                 for Everyone
               </h1>
@@ -66,8 +66,8 @@ export default function Hero({ onDownloadClick }) {
               className="hero-item text-lg text-slate-500 leading-relaxed max-w-md"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              HYOTA bridges patients and doctors — simplifying appointments, medical records, and hospital workflows into one elegant mobile experience.
-            </p>
+              Hyoid india's first Stamedome
+             </p>
 
             {/* CTA Buttons */}
             <div
@@ -89,7 +89,7 @@ export default function Hero({ onDownloadClick }) {
             </div>
 
             {/* Social proof */}
-            <div
+            {/* <div
               className="hero-item flex items-center gap-6 pt-2"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
@@ -113,7 +113,7 @@ export default function Hero({ onDownloadClick }) {
                 </div>
                 <p className="text-xs text-slate-500 mt-0.5">Trusted by early users & hospital staff</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right — Phone mockup */}

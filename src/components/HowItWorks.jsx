@@ -1,6 +1,7 @@
 import { UserPlus, CalendarCheck, Stethoscope, FolderOpen } from 'lucide-react';
 import { useReveal } from '../hooks/useReveal';
-
+import WorkflowSection from "./WorkflowSection";
+import WorkflowSection1 from "./WorkflowSection1";
 const steps = [
   {
     step: '01',
@@ -58,16 +59,19 @@ export default function HowItWorks() {
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
             Up and Running in{' '}
-            <span className="text-gradient">4 Simple Steps</span>
+            <span className="text-gradient">6 Simple Steps</span>
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
-            From registration to managed care — HYOTA gets you started fast with no friction.
+            we believe home is where healing  happens. Our streamlined process connects patients with top doctors, making healthcare more accessible and convenient than ever.
           </p>
         </div>
+        <WorkflowSection1 />
+        <WorkflowSection />
+
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connector line (desktop) */}
+        {/* <div className="relative">
+      
           <div className="hidden lg:block absolute top-[3.25rem] left-[calc(12.5%-1px)] right-[calc(12.5%-1px)] h-px bg-gradient-to-r from-blue-200 via-teal-200 to-amber-200 z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,18 +81,17 @@ export default function HowItWorks() {
                 className={`reveal card-hover relative z-10 bg-white rounded-2xl p-6 shadow-sm border ${border} flex flex-col items-center text-center group`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                {/* Step number */}
+          
                 <div className="absolute -top-3 left-6 text-xs font-black text-slate-200 tracking-widest">{step}</div>
 
-                {/* Icon */}
+             
                 <div className={`w-14 h-14 rounded-2xl ${bg} border ${border} flex items-center justify-center mb-5 shadow-lg ${glow} group-hover:scale-110 transition-transform duration-300`}>
                   <Icon className={`w-6 h-6 ${color}`} strokeWidth={1.8} />
                 </div>
 
                 <h3 className="text-base font-bold text-slate-800 mb-2">{title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{desc}</p>
-
-                {/* Arrow (hidden on last) */}
+ 
                 {i < steps.length - 1 && (
                   <div className="lg:hidden absolute -bottom-3.5 left-1/2 -translate-x-1/2 w-7 h-7 bg-white border border-slate-200 rounded-full flex items-center justify-center shadow-sm text-slate-400 text-xs">
                     ↓
@@ -97,7 +100,7 @@ export default function HowItWorks() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

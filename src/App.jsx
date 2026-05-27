@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
-import Features from './components/Features';
+// import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import AppPreview from './components/AppPreview';
 import About from './components/About';
@@ -10,6 +10,8 @@ import Team from './components/Team';
 import Download from './components/Download';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
+// import WorkflowSection from "./components/WorkflowSection";
+
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,7 +22,7 @@ export default function App() {
       <main>
         <Hero onDownloadClick={() => setModalOpen(true)} />
         <TrustBar />
-        <Features />
+        {/* <Features /> */}
         <HowItWorks />
         <AppPreview />
         <About />
