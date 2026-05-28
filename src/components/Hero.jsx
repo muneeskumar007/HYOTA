@@ -40,10 +40,10 @@ export default function Hero({ onDownloadClick }) {
           <div className="space-y-8">
             {/* Badge */}
             <div
-              className="hero-item inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold px-4 py-2 rounded-full shadow-sm"
+              className="hero-item inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-black text-xs font-semibold px-4 py-2 rounded-full shadow-sm"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse" />
               Launching Soon — Healthcare Reimagined
             </div>
 
@@ -53,21 +53,21 @@ export default function Hero({ onDownloadClick }) {
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight text-slate-900">
-                Smart Healthcare
+                 India's first   Stamedome
+                {/* <br /> */}
+                {/* <span className="text-gradient">Ecosystem</span> */}
                 <br />
-                <span className="text-gradient">Ecosystem</span>
-                <br />
-                for Everyone
+              
               </h1>
             </div>
 
             {/* Subtext */}
-            <p
-              className="hero-item text-lg text-slate-500 leading-relaxed max-w-md"
+            <h2
+              className="hero-item text-3xl text-slate-500 leading-relaxed max-w-lg"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              Hyoid india's first Stamedome
-             </p>
+               we believe  healing  happens at home
+             </h2>
 
             {/* CTA Buttons */}
             <div

@@ -48,11 +48,11 @@ export default function Navbar({ onDownloadClick }) {
       <nav className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-[70px] flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={e => handleNav(e, '#home')} className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center shadow-md shadow-blue-500/30 group-hover:scale-110 transition-transform duration-200">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-black to-teal-500 flex items-center justify-center shadow-md shadow-blue-500/30 group-hover:scale-110 transition-transform duration-200">
             <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
           </div>
           <span className="text-xl font-extrabold tracking-tight text-slate-900">
-            Hy<span className="text-gradient">oid</span>
+            Hy<span  >oid</span>
           </span>
         </a>
 

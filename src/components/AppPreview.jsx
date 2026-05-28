@@ -20,7 +20,7 @@ export default function AppPreview() {
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
             A Glimpse at What's{' '}
-            <span className="text-gradient">Coming</span>
+            <span  >Coming</span>
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
             Our interface is designed with care, clarity, and clinical context in mind. Final screenshots coming soon.

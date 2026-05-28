@@ -4,7 +4,7 @@ import { useReveal } from '../hooks/useReveal';
 const items = [
   { icon: Shield, label: 'Secure Data', desc: 'End-to-end encrypted', color: 'text-blue-600', bg: 'bg-blue-50' },
   { icon: Zap, label: 'Real-time Updates', desc: 'Instant sync across devices', color: 'text-amber-600', bg: 'bg-amber-50' },
-  { icon: Building2, label: 'Prepared Hospital Ready', desc: 'Built for clinical workflows', color: 'text-teal-600', bg: 'bg-teal-50' },
+  { icon: Building2, label: 'choose Preferred Hospital ', desc: 'Built for clinical workflows', color: 'text-teal-600', bg: 'bg-teal-50' },
   { icon: Smartphone, label: 'One App One Click', desc: 'Designed for on-the-go', color: 'text-violet-600', bg: 'bg-violet-50' },
 ];
 
