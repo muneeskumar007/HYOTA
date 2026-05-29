@@ -413,7 +413,8 @@ const timeline = [
     description:
       "Securely create your account and access personalized healthcare services instantly.",
     footer: "Takes less than 1 minute",
-    color: "from-emerald-100 to-green-50",
+    color: "",
+    // from-emerald-100 to-green-50
     accent: "text-emerald-600",
     border: "border-emerald-200",
     dot: "bg-emerald-500",
@@ -426,7 +427,8 @@ const timeline = [
     description:
       "Browse your preferred nearby hospital choose and confirm",
     footer: "Smart scheduling system",
-    color: "from-sky-100 to-cyan-50",
+    color: "",
+    // from-sky-100 to-cyan-50
     accent: "text-sky-600",
     border: "border-sky-200",
     dot: "bg-sky-500",
@@ -439,7 +441,8 @@ const timeline = [
     description:
       "Get professional medical consultation through home visits or secure video sessions.",
     footer: "Accessible from anywhere",
-    color: "from-violet-100 to-fuchsia-50",
+    color: "",
+    // from-violet-100 to-fuchsia-50
     accent: "text-violet-600",
     border: "border-violet-200",
     dot: "bg-violet-500",
@@ -453,7 +456,8 @@ const timeline = [
     description:
       "If your condition needs a senior opinion, your doctor connects live to a specialist at our main hub — right there in your room, no extra booking.",
     footer: "Same visit, instant connection",
-    color: "from-purple-100 to-fuchsia-50",
+    color: "",
+    // from-purple-100 to-fuchsia-50
     accent: "text-purple-600",
     border: "border-purple-200",
     dot: "bg-purple-500",
@@ -466,7 +470,8 @@ const timeline = [
     description:
       "Prescription goes straight to our pharmacy team. Medicines packed and delivered — no trip to a chemist.",
     footer: "Within 60 min of prescription",
-    color: "from-orange-100 to-amber-50",
+    color: "",
+    // from-orange-100 to-amber-50
     accent: "text-orange-600",
     border: "border-orange-200",
     dot: "bg-orange-500",
@@ -479,7 +484,8 @@ const timeline = [
     description:
       "Blood, urine, or swab — our diagnostics technician visits and collects. Results uploaded directly to your app.",
     footer: "Same-day collection",
-    color: "from-cyan-100 to-sky-50",
+    color: "",
+    // from-cyan-100 to-sky-50
     accent: "text-cyan-600",
     border: "border-cyan-200",
     dot: "bg-cyan-500",
@@ -493,7 +499,8 @@ const timeline = [
     description:
       "For tests that need a lab, we send a cab to drop and pick you up — linked to your preferred hospital records.",
     footer: "Dispatched within 30 min",
-    color: "from-red-100 to-orange-50",
+    color: "",
+    // from-red-100 to-orange-50
     accent: "text-red-600",
     border: "border-red-200",
     dot: "bg-red-500",
@@ -507,7 +514,8 @@ const timeline = [
     description:
       "If hospital-level care is needed, we dispatch immediately to your preferred hospital with your medical history shared in advance.",
     footer: "Immediate response system",
-    color: "from-rose-100 to-pink-50",
+    color: "0",
+    // from-rose-100 to-pink-5
     accent: "text-rose-600",
     border: "border-rose-200",
     dot: "bg-rose-500",

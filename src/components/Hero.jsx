@@ -52,7 +52,7 @@ export default function Hero({ onDownloadClick }) {
               className="hero-item"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight text-slate-900">
+              <h1 className="text-5xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight text-slate-900">
                  India's first   Stamedome
                 {/* <br /> */}
                 {/* <span className="text-gradient">Ecosystem</span> */}
@@ -63,7 +63,7 @@ export default function Hero({ onDownloadClick }) {
 
             {/* Subtext */}
             <h2
-              className="hero-item text-3xl text-slate-500 leading-relaxed max-w-lg"
+              className="hero-item text-xl text-slate-500 leading-relaxed max-w-lg"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
                we believe  healing  happens at home
