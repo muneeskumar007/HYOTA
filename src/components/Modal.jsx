@@ -71,10 +71,10 @@ export default function Modal({ isOpen, onClose }) {
               </div>
             </div>
 
-            <button className="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold text-sm hover:bg-blue-700 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25">
-              <Download className="w-4 h-4" />
-              Download APK (Beta)
-            </button>
+           <button className="w-full bg-white text-black py-4 rounded-2xl font-bold text-sm border border-neutral-200 hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+  <Download className="w-4 h-4" />
+  Download APK (Beta)
+</button>
           </div>
 
           <p className="text-center text-xs text-slate-400">

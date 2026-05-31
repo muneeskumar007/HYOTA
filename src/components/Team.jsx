@@ -3,37 +3,41 @@ import { useReveal } from "../hooks/useReveal";
 
 const team = [
   {
-    name: "Aravind",
-    role: "Co-Founder & CEO",
-    type: "Founder",
-    initials: "A",
-    color: "from-blue-500 to-blue-600",
-    bio: "MBBS",
-  },
+  name: "Aravind",
+  role: "Co-Founder & CEO",
+  type: "Founder",
+  initials: "A",
+  avatarColor: "text-blue-500",
+  avatarBorder: "border-blue-200",
+  bio: "MBBS",
+},
   {
-    name: "Saptharishi",
-    role: "Co-Founder & Product",
-    type: "Founder",
-    initials: "S",
-    color: "from-violet-500 to-violet-600",
-    bio: "MBBS",
-  },
+  name: "Saptharishi",
+  role: "Co-Founder & Product",
+  type: "Founder",
+  initials: "S",
+  avatarColor: "text-violet-500",
+  avatarBorder: "border-violet-200",
+  bio: "MBBS",
+},
+ {
+  name: "Manasai satanly J",
+  role: "Lead Developer",
+  type: "Developer",
+  initials: "MS",
+  avatarColor: "text-teal-500",
+  avatarBorder: "border-teal-200",
+  bio: "Full-stack engineer building performant, accessible mobile experiences.",
+},
   {
-    name: "Manasai satanly j",
-    role: "Lead Developer",
-    type: "Developer",
-    initials: "MS",
-    color: "from-teal-500 to-teal-600",
-    bio: "Full-stack engineer building performant, accessible mobile experiences.",
-  },
-  {
-    name: "Muneeskumar s",
-    role: "MERN Stack & App Developer",
-    type: "Developer",
-    initials: "MK",
-    color: "from-amber-500 to-orange-500",
-    bio: "UI-obsessed developer crafting pixel-perfect interfaces with care and precision.",
-  },
+  name: "Muneeskumar S",
+  role: "MERN Stack & App Developer",
+  type: "Developer",
+  initials: "MK",
+  avatarColor: "text-amber-500",
+  avatarBorder: "border-amber-200",
+  bio: "UI-obsessed developer crafting pixel-perfect interfaces with care and precision.",
+}
 ];
 
 export default function Team() {
@@ -66,20 +70,32 @@ export default function Team() {
 
         {/* Desktop Grid */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {team.map(({ name, role, type, initials, color, bio }, i) => (
+          
+          {team.map(({ name, role, type, initials, avatarColor, avatarBorder, bio }, i) => (
             <div
               key={name}
               className="reveal card-hover bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center group"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Avatar */}
-              <div
-                className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-105 transition-transform duration-300`}
-              >
-                <span className="text-2xl font-black text-white">
-                  {initials}
-                </span>
-              </div>
+             <div
+  className={`
+    w-20 h-20
+    rounded-2xl
+    bg-white
+    border-2
+    ${avatarBorder}
+    flex items-center justify-center
+    mx-auto mb-4
+    shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+    group-hover:scale-105
+    transition-all duration-300
+  `}
+>
+  <span className={`text-2xl font-black ${avatarColor}`}>
+    {initials}
+  </span>
+</div>
 
               {/* Tag */}
               <div

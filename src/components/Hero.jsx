@@ -15,16 +15,15 @@ export default function Hero({ onDownloadClick }) {
   }, []);
 
   return (
-    <section
-      id="home"
-      ref={heroRef}
-      className="relative min-h-screen flex items-center pt-16 overflow-hidden gradient-mesh bg-slate-50"
-    >
+   <section
+  id="home"
+  ref={heroRef}
+  className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-white"
+>
       {/* Decorative blobs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-teal-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-3xl pointer-events-none" />
-
+<div className="absolute top-1/4 -left-32 w-96 h-96 bg-gray-100 rounded-full blur-3xl pointer-events-none" />
+<div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-gray-100 rounded-full blur-3xl pointer-events-none" />
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gray-50 rounded-full blur-3xl pointer-events-none" />
       {/* Grid pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -40,10 +39,9 @@ export default function Hero({ onDownloadClick }) {
           <div className="space-y-8">
             {/* Badge */}
             <div
-              className="hero-item inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-black text-xs font-semibold px-4 py-2 rounded-full shadow-sm"
-              style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
+             className="hero-item inline-flex items-center gap-2 bg-white border border-black/10 text-black text-xs font-semibold px-4 py-2 rounded-full shadow-sm" style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
               Launching Soon — Healthcare Reimagined
             </div>
 
@@ -66,7 +64,7 @@ export default function Hero({ onDownloadClick }) {
               className="hero-item text-xl text-slate-500 leading-relaxed max-w-lg"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-               we believe  healing  happens at home
+               We believe  healing  happens at home
              </h2>
 
             {/* CTA Buttons */}
@@ -74,10 +72,13 @@ export default function Hero({ onDownloadClick }) {
               className="hero-item flex flex-col sm:flex-row gap-3"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              <button onClick={onDownloadClick} className="btn-primary text-sm">
-                Download the App
-                <ArrowRight className="w-4 h-4" />
-              </button>
+             <button
+  onClick={onDownloadClick}
+  className="px-6 py-2.5 text-xs font-semibold bg-white text-black border border-black/10  btn-secondary shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+>
+  Download App
+</button>
+ 
               <a
                 href="#how-it-works"
                 onClick={e => { e.preventDefault(); document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }); }}

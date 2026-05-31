@@ -78,11 +78,12 @@ export default function Navbar({ onDownloadClick }) {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <button
-            onClick={onDownloadClick}
-            className="btn-primary text-xs"
-          >
-            Download App
-          </button>
+  onClick={onDownloadClick}
+  className="px-6 py-2.5 text-xs font-semibold bg-white text-black border border-black/10 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+>
+  Download App
+</button>
+ 
         </div>
 
         {/* Mobile Menu Toggle */}
