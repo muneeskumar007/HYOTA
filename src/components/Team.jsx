@@ -1,43 +1,54 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { useReveal } from "../hooks/useReveal";
-
 const team = [
   {
-  name: "Aravind",
-  role: "Co-Founder & CEO",
-  type: "Founder",
-  initials: "A",
-  avatarColor: "text-blue-500",
-  avatarBorder: "border-blue-200",
-  bio: "MBBS",
-},
+    name: "Aravind",
+    role: "Co-Founder & CEO",
+    type: "Founder",
+    initials: "A",
+    avatarColor: "text-blue-500",
+    avatarBorder: "border-blue-200",
+    bio: "MBBS",
+    github: "https://github.com/aravind",
+    linkedin: "https://www.linkedin.com/in/aravind-manohar-86242934a/",
+    email: "mailto:svatex.aravindmanohar@gmail.com",
+  },
   {
-  name: "Saptharishi",
-  role: "Co-Founder & Product",
-  type: "Founder",
-  initials: "S",
-  avatarColor: "text-violet-500",
-  avatarBorder: "border-violet-200",
-  bio: "MBBS",
-},
- {
-  name: "Manasai satanly J",
-  role: "Lead Developer",
-  type: "Developer",
-  initials: "MS",
-  avatarColor: "text-teal-500",
-  avatarBorder: "border-teal-200",
-  bio: "Full-stack engineer building performant, accessible mobile experiences.",
-},
+    name: "Saptharishi",
+    role: "Co-Founder & Product",
+    type: "Founder",
+    initials: "S",
+    avatarColor: "text-violet-500",
+    avatarBorder: "border-violet-200",
+    bio: "MBBS",
+    github: "https://github.com/saptharishi",
+    linkedin: "https://www.linkedin.com/in/saptharishis",
+    email: "mailto:saptharishissma@gmail.com",
+  },
   {
-  name: "Muneeskumar S",
-  role: "MERN Stack & App Developer",
-  type: "Developer",
-  initials: "MK",
-  avatarColor: "text-amber-500",
-  avatarBorder: "border-amber-200",
-  bio: "UI-obsessed developer crafting pixel-perfect interfaces with care and precision.",
-}
+    name: "Manasai satanly J",
+    role: "Lead Developer",
+    type: "Developer",
+    initials: "MS",
+    avatarColor: "text-teal-500",
+    avatarBorder: "border-teal-200",
+    bio: "Full-stack engineer building performant, accessible mobile experiences.",
+    github: "https://github.com/manasai",
+    linkedin: "https://linkedin.com/in/manasai",
+    email: "mailto:manasai@gmail.com",
+  },
+  {
+    name: "Muneeskumar S",
+    role: "MERN Stack & App Developer",
+    type: "Developer",
+    initials: "MK",
+    avatarColor: "text-amber-500",
+    avatarBorder: "border-amber-200",
+    bio: "UI-obsessed developer crafting pixel-perfect interfaces with care and precision.",
+    github: "https://github.com/yourusername",
+    linkedin: "https://linkedin.com/in/yourlinkedin",
+    email: "mailto:yourmail@gmail.com",
+  },
 ];
 
 export default function Team() {
@@ -71,7 +82,19 @@ export default function Team() {
         {/* Desktop Grid */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {team.map(({ name, role, type, initials, avatarColor, avatarBorder, bio }, i) => (
+          {team.map(
+  ({
+    name,
+    role,
+    type,
+    initials,
+    avatarColor,
+    avatarBorder,
+    bio,
+    github,
+    linkedin,
+    email,
+  }, i) => (
             <div
               key={name}
               className="reveal card-hover bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center group"
@@ -122,20 +145,33 @@ export default function Team() {
 
               {/* Social */}
               <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t border-slate-100">
-                <a
-                  href="#"
-                  className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                </a>
 
-                <a
-                  href="#"
-                  className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  <Linkedin className="w-3.5 h-3.5" />
-                </a>
-              </div>
+  <a
+    href={github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 hover:text-black hover:bg-slate-200 transition"
+  >
+    <Github className="w-4 h-4" />
+  </a>
+
+  <a
+    href={linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-50 transition"
+  >
+    <Linkedin className="w-4 h-4" />
+  </a>
+
+  <a
+    href={email}
+    className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 hover:text-red-500 hover:bg-red-50 transition"
+  >
+    <Mail className="w-4 h-4" />
+  </a>
+
+</div>
             </div>
           ))}
         </div>
@@ -146,7 +182,17 @@ export default function Team() {
           <div className="flex gap-4 animate-scroll-mobile w-max">
 
             {[...team, ...team].map(
-              ({ name, role, type, initials, color, bio }, i) => (
+              ({
+                name,
+                role,
+                type,
+                initials,
+                color,
+                bio,
+                github,
+                linkedin,
+                email
+              }, i) => (
                 <div
                   key={`${name}-${i}`}
                   className="w-[260px] flex-shrink-0 bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center group"
@@ -186,17 +232,28 @@ export default function Team() {
                   {/* Social */}
                   <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t border-slate-100">
                     <a
-                      href="#"
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400"
                     >
                       <Github className="w-3.5 h-3.5" />
                     </a>
 
                     <a
-                      href="#"
+                      href={linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400"
                     >
                       <Linkedin className="w-3.5 h-3.5" />
+                    </a>
+
+                    <a
+                      href={email}
+                      className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
