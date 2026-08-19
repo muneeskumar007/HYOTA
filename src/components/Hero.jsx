@@ -1,8 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Play, Shield, Zap, Heart, Star } from 'lucide-react';
 
+const dotPattern = (hex) =>
+  `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23${hex}' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`;
+
+const HYOID_TEAL = '6ab4a0'; // the plus in the Hyoid logo
+const DOT_PATTERN = dotPattern(HYOID_TEAL);
+
 export default function Hero({ onDownloadClick }) {
   const heroRef = useRef(null);
+  const haloRef = useRef(null);
+  const coreRef = useRef(null);
+  const pos = useRef({ tx: 0, ty: 0, cx: 0, cy: 0, active: false, opacity: 0 });
+  const rafId = useRef(null);
 
   useEffect(() => {
     const items = heroRef.current?.querySelectorAll('.hero-item');
@@ -14,11 +24,51 @@ export default function Hero({ onDownloadClick }) {
     });
   }, []);
 
+  useEffect(() => {
+    const tick = () => {
+      const p = pos.current;
+      // Ease the glow toward the cursor instead of snapping — gives it weight.
+      p.cx += (p.tx - p.cx) * 0.16;
+      p.cy += (p.ty - p.cy) * 0.16;
+      const targetOpacity = p.active ? 1 : 0;
+      p.opacity += (targetOpacity - p.opacity) * 0.12;
+
+      if (haloRef.current) {
+        haloRef.current.style.setProperty('--mx', `${p.cx}px`);
+        haloRef.current.style.setProperty('--my', `${p.cy}px`);
+        haloRef.current.style.opacity = String(p.opacity * 0.55);
+      }
+      if (coreRef.current) {
+        coreRef.current.style.setProperty('--mx', `${p.cx}px`);
+        coreRef.current.style.setProperty('--my', `${p.cy}px`);
+        const pulse = 1 + Math.sin(Date.now() / 350) * 0.06;
+        coreRef.current.style.opacity = String(p.opacity);
+        coreRef.current.style.setProperty('--pulse', pulse.toFixed(3));
+      }
+      rafId.current = requestAnimationFrame(tick);
+    };
+    rafId.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId.current);
+  }, []);
+
+  const handleGridMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    pos.current.tx = e.clientX - rect.left;
+    pos.current.ty = e.clientY - rect.top;
+    pos.current.active = true;
+  };
+
+  const handleGridMouseLeave = () => {
+    pos.current.active = false;
+  };
+
   return (
    <section
   id="home"
   ref={heroRef}
   className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-white"
+  onMouseMove={handleGridMouseMove}
+  onMouseLeave={handleGridMouseLeave}
 >
       {/* Decorative blobs */}
 <div className="absolute top-1/4 -left-32 w-96 h-96 bg-gray-100 rounded-full blur-3xl pointer-events-none" />
@@ -26,9 +76,32 @@ export default function Hero({ onDownloadClick }) {
 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gray-50 rounded-full blur-3xl pointer-events-none" />
       {/* Grid pattern */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{ backgroundImage: DOT_PATTERN }}
+      />
+      {/* Interactive glow — soft trailing halo */}
+      <div
+        ref={haloRef}
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: DOT_PATTERN,
+          opacity: 0,
+          WebkitMaskImage: 'radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), black 0%, transparent 75%)',
+          maskImage: 'radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), black 0%, transparent 75%)',
+        }}
+      />
+      {/* Interactive glow — bright pulsing core that eases toward the cursor */}
+      <div
+        ref={coreRef}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: DOT_PATTERN,
+          opacity: 0,
+          transform: 'scale(var(--pulse, 1))',
+          transformOrigin: 'var(--mx, 50%) var(--my, 50%)',
+          WebkitMaskImage: 'radial-gradient(110px circle at var(--mx, 50%) var(--my, 50%), black 0%, transparent 70%)',
+          maskImage: 'radial-gradient(110px circle at var(--mx, 50%) var(--my, 50%), black 0%, transparent 70%)',
+          filter: 'drop-shadow(0 0 6px rgba(106,180,160,0.8))',
         }}
       />
 
@@ -41,7 +114,7 @@ export default function Hero({ onDownloadClick }) {
             <div
              className="hero-item inline-flex items-center gap-2 bg-white border border-black/10 text-black text-xs font-semibold px-4 py-2 rounded-full shadow-sm" style={{ opacity: 0, transform: 'translateY(20px)', transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               Launching Soon — Healthcare Reimagined
             </div>
 

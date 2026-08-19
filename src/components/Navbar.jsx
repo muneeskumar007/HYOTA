@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Activity } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logoIcon from '../assets/logo-icon-dark.jpg';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -47,11 +48,19 @@ export default function Navbar({ onDownloadClick }) {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-[70px] flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" onClick={e => handleNav(e, '#home')} className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-black to-teal-500 flex items-center justify-center shadow-md shadow-blue-500/30 group-hover:scale-110 transition-transform duration-200">
-            <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
-          </div>
-          <span className="text-xl font-extrabold tracking-tight text-slate-900">
+        <a href="#home" onClick={e => handleNav(e, '#home')} className="flex items-center gap-3 group">
+          <div
+            role="img"
+            aria-label="Hyoid"
+            className="w-11 h-11 md:w-12 md:h-12 rounded-xl shadow-md shadow-blue-500/30 group-hover:scale-110 transition-transform duration-200"
+            style={{
+              backgroundImage: `url(${logoIcon})`,
+              backgroundSize: '292%',
+              backgroundPosition: '49% 44%',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+          <span className="text-2xl md:text-[28px] font-extrabold tracking-tight text-slate-900">
             Hy<span  >oid</span>
           </span>
         </a>

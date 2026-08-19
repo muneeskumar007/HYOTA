@@ -8,7 +8,7 @@ import {
   FolderHeart,
   Ambulance,
 } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const timeline = [
   {
@@ -131,12 +131,50 @@ const timeline = [
 
 
 
+const BORDER_COLORS = {
+  emerald: "#10b981",
+  sky: "#0ea5e9",
+  violet: "#8b5cf6",
+  purple: "#a855f7",
+  orange: "#f97316",
+  cyan: "#06b6d4",
+  red: "#ef4444",
+  rose: "#f43f5e",
+};
+
+function getBorderColor(dotClass) {
+  const key = Object.keys(BORDER_COLORS).find((c) => dotClass.includes(c));
+  return BORDER_COLORS[key] || BORDER_COLORS.rose;
+}
+
 export default function WorkflowSection() {
+  const containerRef = useRef(null);
+  const iconRefs = useRef([]);
+  const [activeMap, setActiveMap] = useState({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setActiveMap((prev) => {
+          const next = { ...prev };
+          entries.forEach((entry) => {
+            const idx = Number(entry.target.dataset.index);
+            next[idx] = entry.isIntersecting;
+          });
+          return next;
+        });
+      },
+      { threshold: 0, rootMargin: "-15% 0px -15% 0px" }
+    );
+
+    iconRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-white py-24 px-6">
       {/* Minimal Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-emerald-100/50 blur-[140px] animate-pulse" />
         <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-sky-100/40 blur-[140px] animate-pulse" />
       </div>
 
@@ -161,7 +199,7 @@ export default function WorkflowSection() {
         </div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative" ref={containerRef}>
           {/* Vertical Line */}
           <div className="absolute left-[23px] md:left-1/2 top-0 h-full w-px bg-neutral-200 md:-translate-x-1/2" />
 
@@ -169,6 +207,8 @@ export default function WorkflowSection() {
             {timeline.map((item, index) => {
               const Icon = item.icon;
               const right = index % 2 !== 0;
+              const isActive = !!activeMap[index];
+              const borderColor = getBorderColor(item.dot);
 
               return (
                 <div
@@ -181,13 +221,17 @@ export default function WorkflowSection() {
   }}
 >
                   {/* Timeline Column */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 flex flex-col items-center z-20">
+                  <div
+                    ref={(el) => (iconRefs.current[index] = el)}
+                    data-index={index}
+                    className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 flex flex-col items-center z-20"
+                  >
                     {/* Icon */}
-                    {/* Icon */}
+                    <div className="relative flex items-center justify-center">
 <div
   className="
+    relative
     h-12 w-12 rounded-2xl
-    bg-white
     flex items-center justify-center
     border-2
     shadow-[0_8px_30px_rgba(0,0,0,0.08)]
@@ -196,48 +240,18 @@ export default function WorkflowSection() {
 group-hover:-translate-y-1
   "
   style={{
-    borderColor: item.dot.replace("bg-", "").includes("emerald")
-      ? "#10b981"
-      : item.dot.includes("sky")
-      ? "#0ea5e9"
-      : item.dot.includes("violet")
-      ? "#8b5cf6"
-      : item.dot.includes("purple")
-      ? "#a855f7"
-      : item.dot.includes("orange")
-      ? "#f97316"
-      : item.dot.includes("cyan")
-      ? "#06b6d4"
-      : item.dot.includes("red")
-      ? "#ef4444"
-      : "#f43f5e",
-
-    boxShadow: `
-      0 0 0 4px rgba(255,255,255,0.9),
-      0 0 20px ${
-        item.dot.includes("emerald")
-          ? "rgba(16,185,129,.25)"
-          : item.dot.includes("sky")
-          ? "rgba(14,165,233,.25)"
-          : item.dot.includes("violet")
-          ? "rgba(139,92,246,.25)"
-          : item.dot.includes("purple")
-          ? "rgba(168,85,247,.25)"
-          : item.dot.includes("orange")
-          ? "rgba(249,115,22,.25)"
-          : item.dot.includes("cyan")
-          ? "rgba(6,182,212,.25)"
-          : item.dot.includes("red")
-          ? "rgba(239,68,68,.25)"
-          : "rgba(244,63,94,.25)"
-      }
-    `,
+    borderColor: isActive ? borderColor : "#ffffff",
+    backgroundColor: "#ffffff",
+    boxShadow: isActive
+      ? `0 0 0 4px rgba(255,255,255,0.9), 0 0 20px ${borderColor}55`
+      : `0 0 0 4px rgba(255,255,255,0.9)`,
   }}
 >
   <Icon
-    className={`h-5 w-5  ${item.accent}`}
+    className={`h-5 w-5 transition-colors duration-500 ${isActive ? item.accent : "text-neutral-200"}`}
   />
 </div>
+                    </div>
 
                     {/* Step Number */}
                     <span className="mt-3 text-xs font-bold tracking-[0.25em] text-neutral-400">
