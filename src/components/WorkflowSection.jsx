@@ -235,7 +235,7 @@ export default function WorkflowSection() {
     flex items-center justify-center
     border-2
     shadow-[0_8px_30px_rgba(0,0,0,0.08)]
-    transition-all duration-500
+    transition-all duration-100
     hover:scale-110 group-hover:shadow-[0_0_30px_rgba(0,0,0,0.12)]
 group-hover:-translate-y-1
   "
@@ -248,7 +248,7 @@ group-hover:-translate-y-1
   }}
 >
   <Icon
-    className={`h-5 w-5 transition-colors duration-500 ${isActive ? item.accent : "text-neutral-200"}`}
+    className={`h-5 w-5 transition-colors duration-100 ${isActive ? item.accent : "text-neutral-200"}`}
   />
 </div>
                     </div>
@@ -271,7 +271,7 @@ group-hover:-translate-y-1
                         shadow-[0_10px_40px_rgba(0,0,0,0.06)]
                         hover:-translate-y-2
                         hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]
-                        transition-all duration-500
+                        transition-all duration-100
                         group
                       `}
                     >
@@ -281,7 +281,7 @@ group-hover:-translate-y-1
                       />
 
                       {/* Animated Glow */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-white/20" />
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-100 bg-white/20" />
 
                       <div className="relative z-10">
                         {/* Tags */}

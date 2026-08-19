@@ -211,8 +211,8 @@ export default function About() {
 
             {/* Icon */}
             <div className="mb-6 md:mb-8 flex justify-center">
-              <div className="w-16 h-16 md:w-32 md:h-32 rounded-full border border-gray-200 flex items-center justify-center bg-gradient-to-b from-white to-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
-                <AlertTriangle className="w-7 h-7 md:w-14 md:h-14 text-black" />
+              <div className="w-14 h-14 md:w-24 md:h-24 rounded-full border border-gray-200 flex items-center justify-center bg-gradient-to-b from-white to-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+                <AlertTriangle className="w-6 h-6 md:w-10 md:h-10 text-black" />
               </div>
             </div>
 
@@ -237,8 +237,8 @@ export default function About() {
 
             {/* Icon */}
             <div className="mb-6 md:mb-8 flex justify-center">
-              <div className="w-16 h-16 md:w-32 md:h-32 rounded-full bg-black flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
-                <CheckCircle2 className="w-7 h-7 md:w-14 md:h-14 text-white" />
+              <div className="w-14 h-14 md:w-24 md:h-24 rounded-full bg-black flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+                <CheckCircle2 className="w-6 h-6 md:w-10 md:h-10 text-white" />
               </div>
             </div>
 
