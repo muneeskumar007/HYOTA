@@ -3,7 +3,7 @@ import { useReveal } from "../hooks/useReveal";
 const team = [
   {
     name: "Aravind",
-    role: "Co-Founder & CEO",
+    role: " Founder  ",
     type: "Founder",
     initials: "A",
     avatarColor: "text-blue-500",
@@ -15,7 +15,7 @@ const team = [
   },
   {
     name: "Saptharishi",
-    role: "Co-Founder & Product",
+    role: "Co-Founder & CEO",
     type: "Founder",
     initials: "S",
     avatarColor: "text-violet-500",
