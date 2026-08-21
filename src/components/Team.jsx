@@ -26,8 +26,8 @@ const team = [
     email: "mailto:saptharishissma@gmail.com",
   },
   {
-    name: "Manasai satanly J",
-    role: "Lead Developer",
+    name: "Manasai Stanly J",
+    role: "App Developer",
     type: "Developer",
     initials: "MS",
     avatarColor: "text-teal-500",
@@ -39,7 +39,7 @@ const team = [
   },
   {
     name: "Muneeskumar S",
-    role: "MERN Stack & App Developer",
+    role: "  App Developer",
     type: "Developer",
     initials: "MK",
     avatarColor: "text-amber-500",
